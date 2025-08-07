@@ -89,7 +89,6 @@ const ForecastItem = ({ day, temp, condition, description }) => {
       initial="hidden"
       animate="visible"
       exit="exit"
-      whileHover={{ scale: 1.05 }}
       tabIndex={0}
       aria-label={`${day}: ${description}, ${temp}°C`}
     >
@@ -332,7 +331,7 @@ const SearchSection = () => {
           initial={{ opacity: 0, y: 5 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4 }}
-          aria-labelledby="forecast-heading"
+          aria-labelledby="forecast-heading" 
         >
           <motion.ul 
             className='forecast-list'
@@ -340,6 +339,7 @@ const SearchSection = () => {
             initial="hidden"
             animate="visible"
           >
+            
             <AnimatePresence>
               {dailyForecast.map((day, index) => (
                 <ForecastItem
@@ -349,6 +349,7 @@ const SearchSection = () => {
                   condition={day.condition}
                   description={day.description}
                 />
+                
               ))}
             </AnimatePresence>
           </motion.ul>
